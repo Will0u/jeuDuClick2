@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeu du click 2</title>
+  </head>
+  <body>
+    <script type="module" src="./src/assets/script/main.js"></script>
+
+    <header>
+      <h1>Jeu du click 2</h1>
+    </header>
+
+
+    <main>
+      <section id="game">
+        <button id="clickBtn" name="clickStat" income="1" target="money">Click</button>
+        <p>Argent : <span id="money" name="money"></span></p>
+      </section>
+
+
+      <section id="upgrade">
+        <div>
+          <button id="buyBtn" name='digger' price="35" income="2">Engager un mineur - 35€</button>
+          <p>Nombre de mineurs :<span id="digger" name="digger"></span></p>
+        </div>
+
+        <div>
+          <button id="buyBtn" name='blacksmith' price="50" income="5">Engager un forgeron - 50€</button>
+          <p>Nombre de forgeron :<span id="blacksmith" name="blacksmith"></span></p>
+        </div>
+      </section>
+
+      <section id="stats">
+        <div>
+          <p>Nombre de clics : <span id="clickStat" name="clickStat"></span></p>
+        </div>
+
+        <div>
+          <p>Revenu : <span id="income" name="income"></span></p>
+        </div>
+      </section>
+    </main>
+
+
+    <footer>
+      <p>&copy;Willoch</p>
+    </footer>
+
+  </body>
+</html>
