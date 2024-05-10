@@ -1,4 +1,4 @@
-import { calculator, htmlUpdater } from "./main";
+import { getGameClass, refreshStat, setInLocalGame } from "./_function";
 
 let buyBtnArray = document.querySelectorAll('#buyBtn');
 
@@ -7,21 +7,20 @@ let buyBtnArray = document.querySelectorAll('#buyBtn');
  */
 buyBtnArray.forEach(btn => {
     btn.addEventListener('click', () => {
-        let money = window.localStorage.getItem('money');
-        let productPrice = parseInt(btn.getAttribute('price'));
-        let product = btn.getAttribute('name');
-        
-        if (parseInt(money) >= productPrice ) {
-            window.localStorage.setItem('money',parseInt(money) - productPrice);
+        let Game = getGameClass();
+        let UserStat = Game.UserStat;
 
-            window.localStorage.setItem('income', parseInt(window.localStorage.getItem('income')) + parseInt(btn.getAttribute('income')));
+        for (const Class in Game) {
+            if (Game[Class].name === btn.getAttribute('name')){
+                let Product = Game[Class];
+                if (UserStat.money >= Product.price) {
+                    UserStat.pay(Product.price);
+                    UserStat[btn.getAttribute('name')] = ++ UserStat[btn.getAttribute('name')];
+                    setInLocalGame(Game);
+                    refreshStat(UserStat);
+                } else console.log('Pas de thunes');
+            }; 
+        };
 
-            calculator(product);
-            htmlUpdater('money','money');
-            htmlUpdater(product,product);
-            htmlUpdater('income','income');
-        } else {
-            console.log('non');
-        }
     });
 });

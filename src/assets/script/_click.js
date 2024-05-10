@@ -1,4 +1,4 @@
-import { calculator, htmlUpdater } from "./main";
+import { getGameClass, refreshStat, setInLocalGame } from "./_function";
 
 let clickBtn = document.querySelector('#clickBtn');
 
@@ -8,11 +8,8 @@ let clickBtn = document.querySelector('#clickBtn');
  * add 1 money to money
  */
 clickBtn.addEventListener('click', () => {
-    let clickStatAttribute = clickBtn.getAttribute('name');
-    let moneyAttribute = clickBtn.getAttribute('target');
-    
-    calculator(clickStatAttribute)
-    calculator(moneyAttribute);
-    htmlUpdater(clickStatAttribute,clickStatAttribute);
-    htmlUpdater(moneyAttribute,moneyAttribute);
+    let Game = getGameClass();
+    Game.UserStat.incrementClickMoney();
+    setInLocalGame(Game);
+    refreshStat(Game.UserStat);
 });

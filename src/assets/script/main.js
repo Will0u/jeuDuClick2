@@ -1,37 +1,35 @@
 import './../style/main.scss';
+import { getGameClass, refreshStat, setInLocalGame } from './_function.js';
+
 import './_click.js';
 import './_buy.js';
-import './_income.js';
+import './_ressource.js';
+
+import { StatClass } from './class/statClass.js';
+import { GameClass } from './class/gameClass.js';
+import { MinorClass } from './class/minorClass.js';
+import { BlacksmithClass } from './class/blacksmithClass.js';
+
 
 /**
  * load stats
  */
 window.addEventListener('load' , () => {
-    let spanArray = document.querySelectorAll('span');
-    spanArray.forEach(span => {
-        if (window.localStorage.getItem(span.getAttribute('name')) === null) {
-            window.localStorage.setItem(span.getAttribute('name'),0);
-        } 
-        span.innerHTML = window.localStorage.getItem(span.getAttribute('name'));
-    });
+    let Game;
+    let UserStat;
+    if (window.localStorage.getItem('Game') === null) {
+        let UserStat = new StatClass;
+        let Minor = new MinorClass;
+        let Blacksmith = new BlacksmithClass;
+        Game = new GameClass(
+            UserStat,
+            Minor,
+            Blacksmith,
+        );
+        setInLocalGame(Game);
+    } else {
+        Game = getGameClass();
+        UserStat = Game.UserStat;
+    };
+    refreshStat(UserStat);
 });
-
-/**
- * 
- * @param {*} htmlId 
- * @param {*} attribute 
- * update HTML Element increment
- */
-export function htmlUpdater(htmlId,attribute) {
-    let htmlElement = document.querySelector(`#${htmlId}`);
-    htmlElement.innerHTML = window.localStorage.getItem(attribute);
-};
-
-/**
- * 
- * @param {*} name 
- * increment in localStorage name value
- */
-export function calculator(name) {
-    window.localStorage.setItem(name,parseInt(window.localStorage.getItem(name)) + 1);
-}

@@ -10,37 +10,62 @@
 
     <header>
       <h1>Jeu du click 2</h1>
+      <p>V2.0.0</p>
     </header>
 
 
     <main>
       <section id="game">
-        <button id="clickBtn" name="clickStat" income="1" target="money">Click</button>
-        <p>Argent : <span id="money" name="money"></span></p>
+        <button id="clickBtn" name="clickStat">Click</button>
       </section>
 
 
       <section id="upgrade">
         <div>
-          <button id="buyBtn" name='digger' price="35" income="2">Engager un mineur - 35€</button>
-          <p>Nombre de mineurs :<span id="digger" name="digger"></span></p>
+          <button id="buyBtn" name='minor'>Engager un mineur - 100€</button>
         </div>
 
         <div>
-          <button id="buyBtn" name='blacksmith' price="50" income="5">Engager un forgeron - 50€</button>
-          <p>Nombre de forgeron :<span id="blacksmith" name="blacksmith"></span></p>
+          <button id="buyBtn" name='blacksmith'>Engager un forgeron - 150€</button>
         </div>
       </section>
+
 
       <section id="stats">
         <div>
-          <p>Nombre de clics : <span id="clickStat" name="clickStat"></span></p>
+          <p>Argent : <span id="stat" name="money"></span> €</p>
         </div>
 
         <div>
-          <p>Revenu : <span id="income" name="income"></span></p>
+          <p>Revenu : <span id="stat" name="income"></span></p>
         </div>
+
+        <div>
+          <p>Nombre de clics : <span id="stat" name="click"></span></p>
+        </div>
+
+        <hr>
+
+        <div>
+          <p>Nombre de mineurs :<span id="stat" name="minor"></span></p>
+        </div>
+
+        <div>
+          <p>Nombre de forgeron :<span id="stat" name="blacksmith"></span></p>
+        </div>
+
+        <hr>
+
+        <div>
+          <p>Nombre de pierres :<span id="stat" name="stone"></span></p>
+        </div>
+
+        <div>
+          <p>Nombre de fers :<span id="stat" name="iron"></span></p>
+        </div>
+
       </section>
+
     </main>
 
 
