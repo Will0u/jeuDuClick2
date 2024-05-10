@@ -3,7 +3,7 @@ export let BlacksmithClass = class {
         name = 'blacksmith',
         sword = 1,
         armor = 3,
-        price = 150,
+        price = 250,
         salary = 100
     ) {
         this.name = name;
