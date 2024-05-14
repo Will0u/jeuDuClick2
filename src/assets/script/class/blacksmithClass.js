@@ -1,9 +1,9 @@
 export let BlacksmithClass = class {
     constructor(
         name = 'blacksmith',
-        sword = 1,
-        armor = 3,
-        price = 250,
+        sword = 2,
+        armor = 2,
+        price = 150,
         salary = 100
     ) {
         this.name = name;

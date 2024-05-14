@@ -3,7 +3,7 @@ export let MinorClass = class {
         name = 'minor',
         stoneAmount = 3,
         ironAmount = 1,
-        price = 100,
+        price = 75,
         salary = 75
     ) {
         this.name = name;
