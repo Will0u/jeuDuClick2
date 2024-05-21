@@ -1,4 +1,4 @@
-import { getGameClass, refreshStat, setInLocalGame } from "./_function";
+import { getGameClass, refresh } from "./_function";
 
 /**
  * Increment according interval, ressources
@@ -19,8 +19,7 @@ function ressourceGenerator(
             UserStat.stone += Game.Minor.stoneAmount * UserStat.minor;
             UserStat.iron += Game.Minor.ironAmount * UserStat.minor;
         }
-        setInLocalGame(Game);
-        refreshStat(UserStat);
+        refresh(Game,UserStat);
     },interval);
 };
 

@@ -5,6 +5,7 @@ import './_click.js';
 import './_buy.js';
 import './_ressource.js';
 import './_sell.js';
+import './_tax.js';
 
 import { StatClass } from './class/statClass.js';
 import { GameClass } from './class/gameClass.js';

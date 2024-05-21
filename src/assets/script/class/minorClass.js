@@ -4,7 +4,7 @@ export let MinorClass = class {
         stoneAmount = 3,
         ironAmount = 1,
         price = 75,
-        salary = 75
+        salary = 50
     ) {
         this.name = name;
         this.stoneAmount = stoneAmount;

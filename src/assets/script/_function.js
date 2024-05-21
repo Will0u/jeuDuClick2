@@ -16,6 +16,7 @@ export function getGameClass() {
         raw.UserStat.iron,
         raw.UserStat.blacksmith,
         raw.UserStat.money,
+        raw.UserStat.tax,
         raw.UserStat.income,
         raw.UserStat.lostMoney,
         raw.UserStat.stone,
@@ -78,3 +79,12 @@ export function refreshStat(UserStatObject) {
         };
     });
 };
+
+
+/**
+ * refresh
+ */
+export function refresh(Game, Stat) {
+    setInLocalGame(Game);
+    refreshStat(Stat);
+}

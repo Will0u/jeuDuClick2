@@ -1,4 +1,4 @@
-import { getGameClass, refreshStat, setInLocalGame } from "./_function";
+import { getGameClass, refresh } from "./_function";
 
 let clickBtn = document.querySelector('#clickBtn');
 
@@ -10,6 +10,5 @@ let clickBtn = document.querySelector('#clickBtn');
 clickBtn.addEventListener('click', () => {
     let Game = getGameClass();
     Game.UserStat.incrementClickMoney();
-    setInLocalGame(Game);
-    refreshStat(Game.UserStat);
+    refresh(Game,Game.UserStat);
 });

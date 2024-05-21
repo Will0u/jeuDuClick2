@@ -1,4 +1,4 @@
-import { getGameClass, refreshStat, setInLocalGame } from "./_function";
+import { getGameClass, refresh } from "./_function";
 
 let ressourceSpanArray = document.querySelectorAll('#stat[type="ressource"]');
 
@@ -18,8 +18,7 @@ function sell(spanArray=ressourceSpanArray) {
                 UserStat.money = UserStat.money + Price[span.getAttribute('name')];
             }
         });
-        setInLocalGame(Game);
-        refreshStat(UserStat);
+        refresh(Game,UserStat);
     },1750);
 };
 
